@@ -9,7 +9,7 @@
 	],
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"rollup": "rollup -c"
+		"build": "rollup -c"
 	},
 	"keywords": [
 		"webgl",
