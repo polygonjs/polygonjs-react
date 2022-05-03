@@ -27,6 +27,7 @@ interface PolygonjsSceneProps<S extends PolyScene> {
 	onSceneReady?: (scene: S) => void;
 	onViewerReady?: (scene: BaseViewerType) => void;
 	render: boolean;
+	loadScene: boolean;
 }
 
 interface PolygonjsSceneState {
@@ -39,6 +40,7 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 		displayLoadingProgressBar: true,
 		displayLoadingPoster: true,
 		render: true,
+		loadScene: true,
 	};
 	public containerRef: React.RefObject<HTMLDivElement> = React.createRef();
 	private _mounted = false;
@@ -82,6 +84,9 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 	}
 
 	async loadScene(container: HTMLDivElement) {
+		if (!this.props.loadScene) {
+			return;
+		}
 		const {loadFunction} = this.props;
 		const loadedData = await loadFunction({
 			onProgress: (progress) => this.onProgress(progress),

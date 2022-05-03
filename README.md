@@ -67,16 +67,16 @@ export const MyComponent = () => {
 
 This will load your scene asynchronously. This means that the rest of the page will load first, and then the 3D scene will be loaded.
 
-# Other props & events
+# Other Properties
 
-## Props
 
-| name                          | type       | description                                                                                                                                                                                                                                                                                                                                      |
-| ----------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **displayLoadingProgressBar** | _boolean_  | While the scene is being loaded, a progress bar is updated to reflect the progress. This can be turned off by passing `false` (default: `true`)                                                                                                                                                                                                  |
-| **displayLoadingPoster**      | _boolean_  | While the scene is being loaded, a loading image (or poster) is displayed as a placeholder. The default url of the poster resolves to the location where the editor saves the images screenshot from the viewer (which you can capture yourself using the button with a photo icon). This can be turned off by passing `false` (default: `true`) |
-| **posterUrl**                 | _string_   | Overrides the default poster url.                                                                                                                                                                                                                                                                                                                |
-| **onProgress**                | _function_ | This function is called when the loading progress is updated.                                                                                                                                                                                                                                                                                    |
-| **onSceneReady**              | _function_ | This function is called when the scene is loaded. The scene is given as the first argument. You can then use [Polygonjs API](https://polygonjs.com/api) on the [scene](https://polygonjs.com/docs/api/PolyScene) to update it as you need.                                                                                                       |
-| **onViewerReady**             | _function_ | This function is called when the viewer is loaded. The viewer is given as the first argument. You can then use [Polygonjs API](https://polygonjs.com/api) on the [viewer](https://polygonjs.com/docs/api/TypedViewer) to update it as you need.                                                                                                  |
-| **render**                    | _boolean_  | Pauses the rendering when `false`. This can be useful to disable rendering when the component is either not visible, or when you know nothing has changed (default: `true`)                                                                                                                                                                      |
+| name | type | description |
+| ---- | ---- | ----------- |
+| **displayLoadingProgressBar** | _boolean_  | While the scene is being loaded, a progress bar is updated to reflect the progress. This can be turned off by passing `false` (default: `true`) |
+| **displayLoadingPoster** | _boolean_  | While the scene is being loaded, a loading image (or poster) is displayed as a placeholder. The default url of the poster resolves to the location where the editor saves the images screenshot from the viewer (which you can capture yourself using the button with a photo icon). This can be turned off by passing `false` (default: `true`) |
+| **posterUrl** | _string_ | Overrides the default poster url. |
+| **onProgress** | _function_ | This function is called when the loading progress is updated. |
+| **onSceneReady** | _function_ | This function is called when the scene is loaded. The scene is given as the first argument. You can then use [Polygonjs API](https://polygonjs.com/api) on the [scene](https://polygonjs.com/docs/api/PolyScene) to update it as you need. |
+| **onViewerReady** | _function_ | This function is called when the viewer is loaded. The viewer is given as the first argument. You can then use [Polygonjs API](https://polygonjs.com/api) on the [viewer](https://polygonjs.com/docs/api/TypedViewer) to update it as you need. |
+| **render** | _boolean_ | Pauses the rendering when `false`. This can be useful to disable rendering when the component is either not visible, or when you know nothing has changed (default: `true`) |
+| **loadScene** | _boolean_ | defines if the scene is loaded or not when the component is mounted. (default: `true`) |
