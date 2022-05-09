@@ -30,11 +30,17 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@polygonjs/polygonjs@^1.1.257":
-  version "1.1.257"
-  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.257.tgz#8dd642f6fdc42e87f2af3f801b0282affe39fc47"
-  integrity sha512-SI/6arEXVeOETmQqO9jHag28Ejg44nMWMCktF1GDHHj+RqK8JMuEgFLKDKCBp2CEEMeYAj04/YIDxJFs0G8PwQ==
+"@jscad/modeling@2.9.3":
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/@jscad/modeling/-/modeling-2.9.3.tgz#b058015b82fb6fd54257f32510ce4b8cc491d257"
+  integrity sha512-UnSKU1OAl5g93sh84VnDxF/EMGsUBIZuhD1PjkCh3Gxaut3p+39GTTF5MHYhGFEfvQKbhXQHVbtoE+mdohQuxg==
+
+"@polygonjs/polygonjs@^1.1.258":
+  version "1.1.258"
+  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.258.tgz#66d0a0330bed57074cc0a23089dbe2addcb3035d"
+  integrity sha512-mZ5x+k6/cpgwtd5tnFNjQgZsmoBoVGjeHx+/ly9P1VqVSaDMnMIeF08yXByeh/hSNOb5KYCL5YZiwWuD/OesYA==
   dependencies:
+    "@jscad/modeling" "2.9.3"
     "@types/three" "0.139.0"
     chromotome "1.20.0"
     fflate "0.7.3"
@@ -47,7 +53,7 @@
     three "0.139.2"
     three-mesh-bvh "0.5.8"
     tone "14.7.77"
-    xatlas-web "^0.1.0"
+    xatlas-web "0.1.0"
 
 "@rollup/plugin-commonjs@^22.0.0":
   version "22.0.0"
@@ -1225,7 +1231,7 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
-xatlas-web@^0.1.0:
+xatlas-web@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/xatlas-web/-/xatlas-web-0.1.0.tgz#c1c636d557cbcd30726b546cde011c3861b6e4ef"
   integrity sha512-PprVfuXbaIskxLTLBUQRaWfgSy9xUQqAMIRooOw0P6NYqwgh6T0voeer6+Z5M7AFt5SGXUybuww/uDGs1yw8vQ==

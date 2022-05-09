@@ -3,7 +3,6 @@ import './PolygonjsScene.css';
 
 import {PolyScene} from '@polygonjs/polygonjs/dist/src/engine/scene/PolyScene';
 import {BaseViewerType} from '@polygonjs/polygonjs/dist/src/engine/viewers/_Base';
-import {ThreejsViewer} from '@polygonjs/polygonjs/dist/src/engine/viewers/Threejs';
 
 interface LoadSceneOptions {
 	onProgress: (progress: number) => void;
@@ -107,11 +106,7 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 		if (!this._viewer) {
 			return;
 		}
-		const threejsViewer = this._viewer as ThreejsViewer;
-		if (!threejsViewer.setAutoRender) {
-			return;
-		}
-		threejsViewer.setAutoRender(this.props.render);
+		this._viewer.setAutoRender(this.props.render);
 	}
 
 	onProgress(progress: number) {

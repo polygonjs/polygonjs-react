@@ -23,7 +23,7 @@
 	"author": "@polygonjs",
 	"license": "ISC",
 	"dependencies": {
-		"@polygonjs/polygonjs": "^1.1.257",
+		"@polygonjs/polygonjs": "^1.1.258",
 		"@types/react": "^18.0.8",
 		"react": "^18.1.0",
 		"typescript": "^4.6.4"
