@@ -15,16 +15,9 @@ This is a react component to easily import WebGL scenes created with the node-ba
 
 Polygonjs allows you to create complex and procedural scenes with a visual editor, and you can import them with react, and benefit from its reactive states. You can then update the 3D scene from anything in your react setup.
 
-<table style="margin:0px;padding:0px">
-	<tr style="margin:0px;padding:0px">
-		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/react/scene_01.gif?raw=true"></img></td>
-		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/react/scene_02.gif?raw=true"></img></td>
-	</tr>
-	<tr style="margin:0px;padding:0px">
-		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/react/scene_03.gif?raw=true"></img></td>
-		<td style="margin:0px;padding:0px"><img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/react/react_example.gif?raw=true"></img></td>
-	</tr>
-</table>
+<p align="center">
+<img src="https://github.com/polygonjs/polygonjs-assets/blob/master/tutorials/react/react_example.gif?raw=true" alt="React + Polygonjs"></img>
+</p>
 
 [Live Demo >>](https://polygonjs.com/react)
 
