@@ -22,6 +22,7 @@ export default [
 			},
 		],
 		plugins: [resolve(), commonjs(), typescript({tsconfig: './tsconfig.json'}), postcss()],
+		external: ['three', 'react', '@polygonjs/polygonjs'],
 	},
 	{
 		input: 'dist/esm/types/index.d.ts',
