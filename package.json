@@ -1,6 +1,6 @@
 {
 	"name": "@polygonjs/react",
-	"version": "1.1.258",
+	"version": "1.1.258-2",
 	"description": "React component for the node-based WebGL Polygonjs design tool",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
