@@ -21,6 +21,7 @@ interface PolygonjsSceneProps<S extends PolyScene> {
 	displayLoadingProgressBar: boolean;
 	displayLoadingPoster: boolean;
 	posterUrl?: string;
+	posterExtension?: string;
 	printWarnings: boolean;
 	onProgress?: (progress: number) => void;
 	onSceneReady?: (scene: S) => void;
@@ -38,6 +39,7 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 		printWarnings: false,
 		displayLoadingProgressBar: true,
 		displayLoadingPoster: true,
+		posterExtension: 'png',
 		render: true,
 		loadScene: true,
 	};
@@ -147,7 +149,9 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 	 *
 	 */
 	private _createBackgroundImage() {
-		const posterUrl = this.props.posterUrl || `/polygonjs/screenshots/scenes/${this.props.sceneName}/poster.png`;
+		const posterUrl =
+			this.props.posterUrl ||
+			`/polygonjs/screenshots/scenes/${this.props.sceneName}/poster.${this.props.posterExtension}`;
 		const style = {
 			backgroundImage: `url('${posterUrl}')`,
 		};
