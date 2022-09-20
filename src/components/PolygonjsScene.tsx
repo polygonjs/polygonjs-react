@@ -3,11 +3,20 @@ import './PolygonjsScene.css';
 
 import {PolyScene} from '@polygonjs/polygonjs/dist/src/engine/scene/PolyScene';
 import {BaseViewerType} from '@polygonjs/polygonjs/dist/src/engine/viewers/_Base';
+import {sanitizeUrl} from '@polygonjs/polygonjs/dist/src/core/UrlHelper';
+import {SceneJsonExporterData} from '@polygonjs/polygonjs/dist/src/engine/io/json/export/Scene';
 
+type ConfigureSceneData = (sceneData: SceneJsonExporterData) => void;
 interface LoadSceneOptions {
 	onProgress: (progress: number) => void;
 	domElement: HTMLElement;
 	printWarnings: boolean;
+	cameraMaskOverride?: string;
+	autoPlay: boolean;
+	configureSceneData?: ConfigureSceneData;
+	sceneDataRoot?: string;
+	assetsRoot?: string;
+	libsRootPrefix?: string;
 }
 interface LoadedData {
 	scene: PolyScene;
@@ -23,11 +32,15 @@ interface PolygonjsSceneProps<S extends PolyScene> {
 	posterUrl?: string;
 	posterExtension?: string;
 	printWarnings: boolean;
+	cameraMaskOverride?: string;
+	autoPlay: boolean;
+	configureSceneData?: ConfigureSceneData;
 	onProgress?: (progress: number) => void;
 	onSceneReady?: (scene: S) => void;
 	onViewerReady?: (scene: BaseViewerType) => void;
 	render: boolean;
 	loadScene: boolean;
+	baseUrl: string;
 }
 
 interface PolygonjsSceneState {
@@ -42,6 +55,8 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 		posterExtension: 'png',
 		render: true,
 		loadScene: true,
+		autoPlay: true,
+		baseUrl: '',
 	};
 	public containerRef: React.RefObject<HTMLDivElement> = React.createRef();
 	private _mounted = false;
@@ -93,6 +108,12 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 			onProgress: (progress) => this.onProgress(progress),
 			domElement: container as any,
 			printWarnings: this.props.printWarnings,
+			cameraMaskOverride: this.props.cameraMaskOverride,
+			autoPlay: this.props.autoPlay,
+			configureSceneData: this.props.configureSceneData,
+			sceneDataRoot: `${this.props.baseUrl}/polygonjs/scenes`,
+			assetsRoot: this.props.baseUrl,
+			libsRootPrefix: this.props.baseUrl,
 		});
 		this._scene = loadedData.scene as S;
 		this._viewer = loadedData.viewer;
@@ -149,9 +170,10 @@ export class PolygonjsScene<S extends PolyScene> extends Component<PolygonjsScen
 	 *
 	 */
 	private _createBackgroundImage() {
-		const posterUrl =
+		const posterUrl = sanitizeUrl(
 			this.props.posterUrl ||
-			`/polygonjs/screenshots/scenes/${this.props.sceneName}/poster.${this.props.posterExtension}`;
+				`/polygonjs/screenshots/scenes/${this.props.sceneName}/poster.${this.props.posterExtension}`
+		);
 		const style = {
 			backgroundImage: `url('${posterUrl}')`,
 		};
